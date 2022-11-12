@@ -1,0 +1,143 @@
+.header{
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 3;
+   width: 100%;
+   background: #fff;
+   box-shadow: 0 0px 5px #888;
+}
+.header__icon{
+   width: 15px;
+}
+.header__info {
+   background: $color-main;
+   padding: 15px 0;
+   font-size: 16px;
+   .container{
+      display: flex;
+      align-items: center;
+      justify-content:space-between;
+   }
+   a{
+      color: #000;
+      cursor: pointer;
+   }
+}
+.header__location {
+   img{
+      margin-right: 10px;
+   }
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex: 0 0 auto;
+}
+address{
+   font-style: normal;
+}
+.header__connection {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   img{
+      margin-right: 10px;
+   }
+   flex: 0 1 auto;
+}
+.header__tel {
+   margin-right: 20px;
+}
+.header__icons {
+   flex: 0 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.header__icons-item {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   span{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+   }
+   button{
+      font-size: 18px;
+   }
+   img{
+   transition: all .3s;
+   &:hover{
+      opacity: .7;
+   }
+   &:active{
+      opacity: .3;
+      transition: all .01s;
+   }
+   }
+   padding: 0 10px ;
+   border-left: 1px solid #ccc;
+}
+.header__respons{
+   display: none;
+   align-items: center;
+   justify-content:space-between;
+   width: 100%;
+}
+@media (max-width:879px) {
+   .header__respons{
+      display: flex;
+   }
+   .header__icons , .header__connection , .header__location
+   {display: none;}
+}
+.search-input{
+   opacity: 0;
+   visibility: hidden;
+   transform: translate(20px);
+   transition: all .3s;
+   &._open{
+   visibility: visible;
+   opacity: 1;
+   transform: translate(0px);
+   }
+   position: absolute;
+   right: 100%;
+   input{
+      padding: 5px 15px;
+      padding-right: 30px;
+      font-size: 14px;
+      border: 2px solid #888;
+      border-radius: 5px;
+      &:focus{
+         opacity: 1;
+         border: 2px solid rgb(8, 58, 255);
+      }
+   }
+   span{
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      z-index: 2;
+      &::before,
+      &::after{
+         width: 90%;
+         height: 2px;
+         content: '';
+         position: absolute;
+         background: #000;
+      }
+      &::after{
+         transform: rotate(45deg);
+      }
+      &::before{
+         transform: rotate(-45deg);
+      }
+   }
+}
